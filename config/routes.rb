@@ -1,4 +1,10 @@
 Reuse::Application.routes.draw do
+  resources :validacoes
+
+
+  resources :treinamentos
+
+
   resources :receita
 
 

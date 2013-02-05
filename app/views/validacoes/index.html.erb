@@ -1,0 +1,33 @@
+<h1>Listing validacoes</h1>
+
+<table>
+  <tr>
+    <th>Entrada1</th>
+    <th>Entrada2</th>
+    <th>Entrada3</th>
+    <th>Entrada4</th>
+    <th>Entrada5</th>
+    <th>Target</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @validacoes.each do |validacao| %>
+  <tr>
+    <td><%= validacao.entrada1 %></td>
+    <td><%= validacao.entrada2 %></td>
+    <td><%= validacao.entrada3 %></td>
+    <td><%= validacao.entrada4 %></td>
+    <td><%= validacao.entrada5 %></td>
+    <td><%= validacao.target %></td>
+    <td><%= link_to 'Show', validacao %></td>
+    <td><%= link_to 'Edit', edit_validacao_path(validacao) %></td>
+    <td><%= link_to 'Destroy', validacao, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Validacao', new_validacao_path %>

@@ -1,0 +1,41 @@
+<%= form_for(@validacao) do |f| %>
+  <% if @validacao.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@validacao.errors.count, "error") %> prohibited this validacao from being saved:</h2>
+
+      <ul>
+      <% @validacao.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :entrada1 %><br />
+    <%= f.text_field :entrada1 %>
+  </div>
+  <div class="field">
+    <%= f.label :entrada2 %><br />
+    <%= f.text_field :entrada2 %>
+  </div>
+  <div class="field">
+    <%= f.label :entrada3 %><br />
+    <%= f.text_field :entrada3 %>
+  </div>
+  <div class="field">
+    <%= f.label :entrada4 %><br />
+    <%= f.text_field :entrada4 %>
+  </div>
+  <div class="field">
+    <%= f.label :entrada5 %><br />
+    <%= f.text_field :entrada5 %>
+  </div>
+  <div class="field">
+    <%= f.label :target %><br />
+    <%= f.text_field :target %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

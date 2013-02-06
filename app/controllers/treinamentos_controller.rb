@@ -20,6 +20,59 @@ class TreinamentosController < ApplicationController
       format.json { render json: @treinamento }
     end
   end
+  
+  def chama_treinamento
+    rede = Rede.new
+    treinamentos = Treinamento.all
+    rede.treina treinamentos
+    @rede = rede
+    respond_to do |format|
+      format.html # treina.html.erb
+      format.json { render json: @pesos }
+    end
+  end
+
+  def treina
+    parada = 60.times.map { 0 }
+    pesos = Array.new
+    pesos = 5.times.map { rand().round(2) }
+    alfa = 0.0025 
+    epoca = 0
+    treinamentos = Treinamento.all
+   
+    while parada.include?(0)
+      treinamentos.each_with_index do |treinamento, i|
+        parada, pesos = calcula_peso i, treinamento.entradas, pesos, treinamento.target, parada, alfa
+      end
+      epoca+=1
+    end
+    @epocas = epoca
+    @pesos = pesos
+    respond_to do |format|
+      format.html # treina.html.erb
+      format.json { render json: @pesos }
+    end
+  end
+
+  def calcula_peso i, entradas, pesos, target, parada, alfa
+      somatorio = 0
+      entradas.each_with_index do |x, index|
+          somatorio += x*pesos[index]      
+      end
+      saida = somatorio >= 0 ? 1 : -1
+      parada[i] =
+          if saida == target
+               1
+          else
+              entradas.each_with_index do |x, index|
+                  pesos[index] += alfa*x*target
+              end     
+              0
+          end
+        
+      return parada, pesos
+
+  end
 
   # GET /treinamentos/new
   # GET /treinamentos/new.json

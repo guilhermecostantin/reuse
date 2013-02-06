@@ -1,0 +1,34 @@
+<h1>Listing redes</h1>
+
+<table>
+  <tr>
+    <th>Peso1</th>
+    <th>Peso2</th>
+    <th>Peso3</th>
+    <th>Peso4</th>
+    <th>Peso5</th>
+    <th>Epocas</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @redes.each do |rede| %>
+  <tr>
+    <td><%= rede.peso1 %></td>
+    <td><%= rede.peso2 %></td>
+    <td><%= rede.peso3 %></td>
+    <td><%= rede.peso4 %></td>
+    <td><%= rede.peso5 %></td>
+    <td><%= rede.epocas %></td>
+    <td><%= link_to 'Show', rede %></td>
+    <td><%= link_to 'Valida rede', valida_rede_path(rede) %></td>
+    <td><%= link_to 'Edit', edit_rede_path(rede) %></td>
+    <td><%= link_to 'Destroy', rede, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Rede', new_rede_path %>

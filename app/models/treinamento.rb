@@ -1,6 +1,16 @@
 class Treinamento < ActiveRecord::Base
   attr_accessible :entrada1, :entrada2, :entrada3, :entrada4, :entrada5, :target
 
+
+
+
+	def entradas
+		a = Array.new
+		a.push(entrada1, entrada2, entrada3, entrada4, entrada5)
+		return a
+	end
+
+
   def treina_rede
   	parada = 60.times.map { 0 }
 	pesos = Array.new
@@ -20,8 +30,6 @@ class Treinamento < ActiveRecord::Base
   end
 
 
-
-private
 
 	def calcula_peso i, entradas,pesos, target, parada, alfa
 	    somatorio = 0

@@ -1,12 +1,23 @@
 Reuse::Application.routes.draw do
+  resources :redes do
+    member do
+      get 'valida'
+    end
+  end
+
+
   resources :validacoes
 
 
-  resources :treinamentos
+  resources :treinamentos do
+    collection do 
+      get 'chama_treinamento'
+      get 'treina'
+    end
+  end
 
 
   resources :receita
-
 
   resources :cook_books
 

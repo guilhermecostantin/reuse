@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  peso1: 1.5
+  peso2: 1.5
+  peso3: 1.5
+  peso4: 1.5
+  peso5: 1.5
+  epocas: 1
+
+two:
+  peso1: 1.5
+  peso2: 1.5
+  peso3: 1.5
+  peso4: 1.5
+  peso5: 1.5
+  epocas: 1

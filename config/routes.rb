@@ -1,4 +1,7 @@
 Reuse::Application.routes.draw do
+  resources :mlps
+
+
   resources :redes do
     member do
       get 'valida'

@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  entrada1: 1.5
+  entrada2: 1.5
+  entrada3: 1.5
+  entrada4: 1.5
+  target1: 1
+  target2: 1
+  target3: 1
+
+two:
+  entrada1: 1.5
+  entrada2: 1.5
+  entrada3: 1.5
+  entrada4: 1.5
+  target1: 1
+  target2: 1
+  target3: 1

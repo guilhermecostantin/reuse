@@ -1,0 +1,45 @@
+<%= form_for(@mlp) do |f| %>
+  <% if @mlp.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@mlp.errors.count, "error") %> prohibited this mlp from being saved:</h2>
+
+      <ul>
+      <% @mlp.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :entrada1 %><br />
+    <%= f.text_field :entrada1 %>
+  </div>
+  <div class="field">
+    <%= f.label :entrada2 %><br />
+    <%= f.text_field :entrada2 %>
+  </div>
+  <div class="field">
+    <%= f.label :entrada3 %><br />
+    <%= f.text_field :entrada3 %>
+  </div>
+  <div class="field">
+    <%= f.label :entrada4 %><br />
+    <%= f.text_field :entrada4 %>
+  </div>
+  <div class="field">
+    <%= f.label :target1 %><br />
+    <%= f.number_field :target1 %>
+  </div>
+  <div class="field">
+    <%= f.label :target2 %><br />
+    <%= f.number_field :target2 %>
+  </div>
+  <div class="field">
+    <%= f.label :target3 %><br />
+    <%= f.number_field :target3 %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
